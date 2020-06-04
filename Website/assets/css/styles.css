@@ -1,0 +1,101 @@
+.main_background {
+  	width: 100%;
+  	filter: blur(3px);
+  	-webkit-filter: blur(3px);
+}
+
+.secondary_background {
+	height: 400px;
+	object-fit: cover;
+	object-position: 20% -250px;
+}
+/*1060px-nél ugorjon össze*/
+@media screen and (max-width: 1060px) {
+    .main_box {
+        display: none !important;
+    }
+
+    .service {
+    	display: none !important;
+    }
+
+    .header_p {
+    	display: none !important;
+    }
+
+    .secondary_background {
+	height: 100%;
+	object-fit: cover;
+	object-position: 20% 0px;
+	}
+}
+
+@media screen and (min-width: 1060px) {
+	.header {
+    	margin-right: 25% !important; 
+    }
+}
+
+.header_p {
+	size: 2rem !important;
+}
+
+.line {
+	padding: 110px 0;
+}
+
+.main_box {
+	margin-left: 25%;
+}
+
+.begin {
+	padding: 72px 0;
+}
+
+.gray {
+	background-color: #A7B6C9ff;;
+}
+
+.service {
+	background-color: #4C667Dff;
+	color: white;
+}
+
+.picture {
+	background-image: url(../../img/second_background.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.footer {
+	background-color: #3F4C59ff;
+	color: white;
+}
+
+.header {
+	text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+}
+
+.icon_little {
+	height: 24px;
+	width: 24px;
+}
+
+.icon {
+	height: 64px;
+	width: 64px;
+}
+
+object {
+	height: 64px;
+	width: 64px;
+	fill: white;
+}
+
+.cel-img {
+	width: 80%;
+}
+/*$color1: #A7B6C9ff;
+$color2: #E5FEFEff;
+$color3: #3F4C59ff;
+$color4: #4C667Dff;*/
