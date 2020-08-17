@@ -23,13 +23,13 @@
                         <a class="nav-link" href="index.html">Kezdőlap</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="celcsoportok.html">Célcsoportok</a>
+                        <a class="nav-link" href="celcsoportok.html">Megbízóink</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="termekek.html">Termékek</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="szolgaltatasok.html">Szolgáltatások</a>
+                        <a class="nav-link" href="szolgaltatasok.html">Szolgáltatásaink</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="kapcsolat.html">Kapcsolat</a>
@@ -42,6 +42,32 @@
         </div>
     </nav>
     
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="secondary_background main_background floating" src="img/CO2-main.jpg">
+                <div class="carousel-caption">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-9 col-lg-6 d-flex align-items-top justify-content-start">
+                                <div class="header">
+                                    <h1>Kapcsolat</h1>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid padding">
+        <div class="row jumbotron padding justify-content-center align-items-start">
+            <div class="col-xs-3 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding">
+                <h5>Minden bejövő emailt szívesen fogadunk!</h5>
+            </div>
+        </div>
+	</div>
+	
+
 <!--- Get a quote -->
     <div class="container-fluid padding">
         <div class="row service line padding d-flex justify-content-center">
@@ -58,15 +84,9 @@
 			      <input type="email" class="form-control" id="inputEmail" placeholder="valami@cegem.hu">
 			    </div>
 			  </div>
-			  <div class="form-group row padding">
-			    <label for="inputText" class="col-lg-12 col-form-label">Ajánlat szövege</label>
-			    <div class="col-lg-12">
-			      <input type="text" class="form-control" id="inputText" placeholder="Az alábbi ügyben érdeklődnék...">
-			    </div>
-			  </div>
 			  <div class="form-group row padding d-flex justify-content-center">
 			    <div class="col-lg-4">
-			      <button type="submit" class="btn btn-primary">Küldés</button>
+			      <button onclick="sendMail()" type="submit" class="btn btn-primary">Küldés</button>
 			    </div>
 			  </div>
 			</form>
@@ -79,7 +99,7 @@
                 <div class="col-md-6">
                     <hr class="light">
                     <p>+36 valami</p>
-                    <p>info@valami.hu</p>
+                    <p>info@solarvilagitas.hu</p>
                     <p>Helyszín</p>
                 </div>
                 <div class="col-md-6">
@@ -95,6 +115,12 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function sendMail() {
+            window.open('mailto:info@solarvilagitas.hu?subject=Ajánlat kérés&body=Tisztelt Szolárvilágítás!');
+        }
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

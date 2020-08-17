@@ -18,20 +18,20 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+			</button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.html">Kezdőlap</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="celcsoportok.html">Célcsoportok</a>
+                        <a class="nav-link" href="celcsoportok.html">Megbízóink</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="termekek.html">Termékek</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="szolgaltatasok.html">Szolgáltatások</a>
+                        <a class="nav-link" href="szolgaltatasok.html">Szolgáltatásaink</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="kapcsolat.html">Kapcsolat</a>
@@ -42,9 +42,37 @@
                 </ul>
             </div>
         </div>
-    </nav>
+	</nav>
 
-	<form id="elemek">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="secondary_background main_background floating" src="img/CO2-main.jpg">
+                <div class="carousel-caption">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-9 col-lg-6 d-flex align-items-top justify-content-start">
+                                <div class="header">
+                                    <h1>CO2 kalkulátór</h1>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="container-fluid padding">
+        <div class="row jumbotron padding justify-content-center align-items-start">
+            <div class="col-xs-3 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding">
+                <h5>Az alábbi kalkulátorral ön is meggyőződhet a megtakaritás mértékéről!</h5>
+            </div>
+        </div>
+	</div>
+	
+	<div class="container-fluid padding">
+        <div class="row padding d-flex align-items-center justify-content-center">
+            <div class="col-xl-8">
+	<div id="elemek">
 		<p><label>Jelenlegi fogyasztás: </label>
 		<input id="jelFogy" type="number" name="jelFogy" min="0" step="0.01">
 		<label>MWh/év</label></p>
@@ -57,32 +85,40 @@
 		<input id="keletkezo" type="number" name="keletkezo" min="0" step="0.01" value="0.55">
 		<label>tonna</label></p>
 
-		<p><label>Összes megtakarítás: </label>
+		<p class="ready"><label>Összes megtakarítás: </label>
 		<span id="osszMegtak"></span>
 		<label>MWh/év</label></p>
 
-		<p><label>CO2 kibocsátás csökkentés: </label>
+		<p class="ready"><label>CO2 kibocsátás csökkentés: </label>
 		<span id="kibocsCsok"></span>
 		<label>tonna CO2/év</label></p>
 
-		<p><label>A megtakarított üvegházhatású gázt a következő kiterjedésű erdő kötötte volna le: </label>
+		<p class="ready"><label>A megtakarított üvegházhatású gázt a következő kiterjedésű erdő kötötte volna le: </label>
 		<span id="erdoTer"></span>
 		<label>hektár</label></p>
 
-		<p><label>Például kb.: </label>
+		<p class="ready"><label>Például kb.: </label>
 		<span id="erdoDb"></span>
 		<label>darab tölgyfa</label></p>
 
-		<p><label>Erdő telepítés megtakarítás évente (55 év viszonyában): </label>
+		<p class="ready"><label>Erdő telepítés megtakarítás évente (55 év viszonyában): </label>
 		<span id="m2Db"></span>
 		<label>m2/év</label></p>
 
-		<button id="gomb" onclick="calc()">Számol</button>
+		<hr>
+		
+		<div class="align-right">
+			<button class="btn btn-primary" id="gomb" onclick="static()">Számol</button>
+		</div>
+
+		<hr>
 
 		<p><em>1 hektár erdő 9,3 tonna CO2-t köt meg évente</em></p>
 		<p><em>Egy 50 éves fa 50 kg oxigént termel és 68,75 kg CO2-t dolgoz fel egy vegetációs idõszakban</em></p>
-	</form>
-
+	</div>
+</div>
+</div>
+</div>
 	    <!--- Footer -->
     <footer>
         <div class="container-fluid footer padding">
@@ -108,10 +144,9 @@
     </footer>
 
 	<script type="text/javascript">
-		
 
-		var jelFogy = document.getElementById("jelFogy").value;
-		var megtak = document.getElementById("megtak").value;
+		var jelFogy = document.getElementById("jelFogy").value.replace(",", ".");
+		var megtak = document.getElementById("megtak").value.replace(",", ".");
 		var keletkezo = document.querySelector("#keletkezo");
 		var osszMegtak = document.querySelector("#osszMegtak");
 		var kibocsCsok = document.querySelector("#kibocsCsok");
@@ -124,23 +159,9 @@
 
 		static();
 
-		calc();
-
-		function calc() {
-			jelFogy();
-			megtak();
-			static();
-		}
-
-		function jelFogy() {
-			jelFogy = document.getElementById("jelFogy").value;
-		}
-
-		function megtak() {
-			megtak = document.getElementById("megtak").value;
-		}
-
 		function static() {
+			jelFogy = document.getElementById("jelFogy").value;
+			megtak = document.getElementById("megtak").value;
 			var vegOsszMegtak = (jelFogy * megtak / 100).toPrecision(3);
 			var vegKibocsCsok = (megtak * keletkezo).toPrecision(3);
 			var vegErdoTer = (vegOsszMegtak / 9.3).toPrecision(3);
@@ -152,10 +173,13 @@
 			erdoTer.textContent = vegErdoTer;
 			erdoDb.textContent = vegErdoDb;
 			m2Db.textContent = vegM2Db;
-		}
-		
-		
 
+			osszMegtak.classList.add("result");
+			kibocsCsok.classList.add("result");
+			erdoTer.classList.add("result");
+			erdoDb.classList.add("result");
+			m2Db.classList.add("result");
+		}
 	</script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
