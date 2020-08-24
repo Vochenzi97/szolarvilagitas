@@ -65,6 +65,11 @@
 	background-image: url(../../img/second_background.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-attachment: fixed;
+}
+
+.trans {
+	background-color: rgba(255, 255, 255, 0.4);
 }
 
 /* .footer {
@@ -102,6 +107,17 @@ object {
 	border: 2px solid black;
 	color: white;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+.ani {
+	opacity: 0;
+	transform: translate(0, 10vh);
+	transition: all 1s;
+}
+
+.ani.fade-in {
+	opacity: 1;
+  	transform: translate(0, 0);
 }
 /*$color1: #A7B6C9ff;
 $color2: #E5FEFEff;
