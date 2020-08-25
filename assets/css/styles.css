@@ -38,6 +38,9 @@
 
 .header_p {
 	size: 2rem !important;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	
 }
 
 .line {
@@ -53,7 +56,7 @@
 }
 
 .gray {
-	background-color: #A7B6C9ff;;
+	background-color: #A7B6C9ff;
 }
 
 /* .service {
@@ -72,10 +75,10 @@
 	background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* .footer {
+.footer {
 	background-color: #3F4C59ff;
 	color: white;
-} */
+}
 
 .header {
 	text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
@@ -84,6 +87,7 @@
 .icon_little {
 	height: 24px;
 	width: 24px;
+	font-weight: 500;
 }
 
 .icon {
@@ -102,7 +106,7 @@ object {
 }
 
 .result {
-	background-color: lightgreen;
+	background-color: rgb(30, 146, 30);
 	border-radius: 5px;
 	border: 2px solid black;
 	color: white;
