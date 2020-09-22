@@ -24,16 +24,31 @@
     }
 
     .secondary_background {
-	height: 100%;
-	object-fit: cover;
-	object-position: 20% 0px;
+		height: 100%;
+		object-fit: cover;
+		object-position: 20% 0px;
+	}
+
+	.smart_icon_wide {
+		width: 100%;
+	}
+
+	.smart_icon_high{
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: 908px) {
+	.smart_icon_hidden{
+		display: block !important;
+		width: 100%;
 	}
 }
 
 @media screen and (min-width: 1060px) {
 	.header {
     	margin-right: 25% !important; 
-    }
+	}
 }
 
 .header_p {
@@ -105,6 +120,20 @@ object {
 	width: 80%;
 }
 
+.smart_icon_high{
+	display: block;
+	height: 640px;
+	padding: 6px, 6px;
+}
+
+.smart_icon_wide {
+	padding: 6px, 6px;
+}
+
+.smart_icon_hidden {
+	display: none;
+}
+
 .result {
 	background-color: rgb(30, 146, 30);
 	border-radius: 5px;
@@ -123,6 +152,7 @@ object {
 	opacity: 1;
   	transform: translate(0, 0);
 }
+
 /*$color1: #A7B6C9ff;
 $color2: #E5FEFEff;
 $color3: #3F4C59ff;
